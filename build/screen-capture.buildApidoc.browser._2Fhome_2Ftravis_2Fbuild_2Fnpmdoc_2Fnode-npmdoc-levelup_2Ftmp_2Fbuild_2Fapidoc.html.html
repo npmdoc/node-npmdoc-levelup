@@ -1,0 +1,966 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/level/levelup">levelup (v1.3.5)</a>
+</h1>
+<h4>Fast &amp; simple storage - a Node.js-style LevelDB wrapper</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.levelup">module levelup</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.levelup.batch">
+            function <span class="apidocSignatureSpan">levelup.</span>batch
+            <span class="apidocSignatureSpan">(levelup, codec)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.levelup.destroy">
+            function <span class="apidocSignatureSpan">levelup.</span>destroy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.levelup.repair">
+            function <span class="apidocSignatureSpan">levelup.</span>repair
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.levelup.super_">
+            function <span class="apidocSignatureSpan">levelup.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">levelup.</span>batch.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">levelup.</span>errors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">levelup.</span>util</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.levelup.batch">module levelup.batch</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.levelup.batch.batch">
+            function <span class="apidocSignatureSpan">levelup.</span>batch
+            <span class="apidocSignatureSpan">(levelup, codec)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.levelup.batch.prototype">module levelup.batch.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.levelup.batch.prototype.clear">
+            function <span class="apidocSignatureSpan">levelup.batch.prototype.</span>clear
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.levelup.batch.prototype.del">
+            function <span class="apidocSignatureSpan">levelup.batch.prototype.</span>del
+            <span class="apidocSignatureSpan">(key_, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.levelup.batch.prototype.put">
+            function <span class="apidocSignatureSpan">levelup.batch.prototype.</span>put
+            <span class="apidocSignatureSpan">(key_, value_, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.levelup.batch.prototype.write">
+            function <span class="apidocSignatureSpan">levelup.batch.prototype.</span>write
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.levelup.errors">module levelup.errors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.levelup.errors.EncodingError">
+            function <span class="apidocSignatureSpan">levelup.errors.</span>EncodingError
+            <span class="apidocSignatureSpan">(message, cause)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.levelup.errors.InitializationError">
+            function <span class="apidocSignatureSpan">levelup.errors.</span>InitializationError
+            <span class="apidocSignatureSpan">(message, cause)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.levelup.errors.LevelUPError">
+            function <span class="apidocSignatureSpan">levelup.errors.</span>LevelUPError
+            <span class="apidocSignatureSpan">(message, cause)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.levelup.errors.NotFoundError">
+            function <span class="apidocSignatureSpan">levelup.errors.</span>NotFoundError
+            <span class="apidocSignatureSpan">(message, cause)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.levelup.errors.OpenError">
+            function <span class="apidocSignatureSpan">levelup.errors.</span>OpenError
+            <span class="apidocSignatureSpan">(message, cause)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.levelup.errors.ReadError">
+            function <span class="apidocSignatureSpan">levelup.errors.</span>ReadError
+            <span class="apidocSignatureSpan">(message, cause)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.levelup.errors.WriteError">
+            function <span class="apidocSignatureSpan">levelup.errors.</span>WriteError
+            <span class="apidocSignatureSpan">(message, cause)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.levelup.util">module levelup.util</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.levelup.util.dispatchError">
+            function <span class="apidocSignatureSpan">levelup.util.</span>dispatchError
+            <span class="apidocSignatureSpan">(db, error, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.levelup.util.getLevelDOWN">
+            function <span class="apidocSignatureSpan">levelup.util.</span>getLevelDOWN
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.levelup.util.getOptions">
+            function <span class="apidocSignatureSpan">levelup.util.</span>getOptions
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.levelup.util.isDefined">
+            function <span class="apidocSignatureSpan">levelup.util.</span>isDefined
+            <span class="apidocSignatureSpan">(v)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">levelup.util.</span>defaultOptions</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.levelup" id="apidoc.module.levelup">module levelup</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.levelup.batch" id="apidoc.element.levelup.batch">
+        function <span class="apidocSignatureSpan">levelup.</span>batch
+        <span class="apidocSignatureSpan">(levelup, codec)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Batch(levelup, codec) {
+  this._levelup = levelup
+  this._codec = codec
+  this.batch = levelup.db.batch()
+  this.ops = []
+  this.length = 0
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Encoding of the `key` object will adhere to the `'keyEncoding'` option provided to &lt;a href="#ctor"&gt;
+;&lt;code&gt;levelup()&lt;/code&gt;&lt;/a&gt;, although you can provide alternative encoding settings in the options
+ for `del()` (it's recommended that you stay consistent in your encoding of keys and values in a single store).
+
+A `'sync'` option can also be passed, see &lt;a href="#put"&gt;&lt;code&gt;put()&lt;/code&gt;&lt;
+;/a&gt; for details on how this works.
+
+--------------------------------------------------------
+&lt;a name="batch"&gt;&lt;/a&gt;
+### db.<span class="apidocCodeKeywordSpan">batch</span>(array[, options][, callback]) *(array form)*
+&lt;code&gt;batch()&lt;/code&gt; can be used for very fast bulk-write operations (both *put* and *delete*). The `array`
+argument should contain a list of operations to be executed sequentially, although as a whole they are performed as an atomic operation
+ inside LevelDB.
+
+Each operation is contained in an object having the following properties: `type`, `key`, `value`, where the *type* is either `&amp;#
+x27;put'` or `'del'`. In the case of `'del'` the `'value'` property is ignored. Any entries with
+ a `'key'` of `null` or `undefined` will cause an error to be returned on the `callback` and any `'type': &amp;#
+x27;put'` entry with a `'value'` of `null` or `undefined` will return an error.
+
+If `key` and `value` are defined but `type` is not, it will default to `'put'`.
+
+```js
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.levelup.destroy" id="apidoc.element.levelup.destroy">
+        function <span class="apidocSignatureSpan">levelup.</span>destroy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deprecated() {
+  warned = exports.printDeprecationMessage(msg, warned, deprecated);
+  if (new.target) {
+    return Reflect.construct(fn, arguments, new.target);
+  }
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  * &lt;a href="#createKeyStream"&gt;&lt;code&gt;db.&lt;b&gt;createKeyStream()&lt;/b&gt;&lt;/code&gt;
+;&lt;/a&gt;
+  * &lt;a href="#createValueStream"&gt;&lt;code&gt;db.&lt;b&gt;createValueStream()&lt;/b&gt;&lt;/code
+&gt;&lt;/a&gt;
+
+### Special operations exposed by LevelDOWN
+
+  * &lt;a href="#approximateSize"&gt;&lt;code&gt;db.db.&lt;b&gt;approximateSize()&lt;/b&gt;&lt;/code
+&gt;&lt;/a&gt;
+  * &lt;a href="#getProperty"&gt;&lt;code&gt;db.db.&lt;b&gt;getProperty()&lt;/b&gt;&lt;/code&gt;&amp;#
+x3c;/a&gt;
+  * &lt;a href="#destroy"&gt;&lt;code&gt;&lt;b&gt;leveldown.<span class="apidocCodeKeywordSpan">destroy</span>()&lt;/b&gt;&lt;/code&gt;&lt;/a&gt;
+  * &lt;a href="#repair"&gt;&lt;code&gt;&lt;b&gt;leveldown.repair()&lt;/b&gt;&lt;/code&gt;&lt;/a
+&gt;
+
+### Special Notes
+  * &lt;a href="#writeStreams"&gt;What happened to &lt;code&gt;&lt;b&gt;db.createWriteStream()&lt;/b&gt;
+;&lt;/code&gt;&lt;/a&gt;
+
+
+--------------------------------------------------------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.levelup.repair" id="apidoc.element.levelup.repair">
+        function <span class="apidocSignatureSpan">levelup.</span>repair
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deprecated() {
+  warned = exports.printDeprecationMessage(msg, warned, deprecated);
+  if (new.target) {
+    return Reflect.construct(fn, arguments, new.target);
+  }
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  * &lt;a href="#createValueStream"&gt;&lt;code&gt;db.&lt;b&gt;createValueStream()&lt;/b&gt;&lt;/code
+&gt;&lt;/a&gt;
+
+### Special operations exposed by LevelDOWN
+
+  * &lt;a href="#approximateSize"&gt;&lt;code&gt;db.db.&lt;b&gt;approximateSize()&lt;/b&gt;&lt;/code
+&gt;&lt;/a&gt;
+  * &lt;a href="#getProperty"&gt;&lt;code&gt;db.db.&lt;b&gt;getProperty()&lt;/b&gt;&lt;/code&gt;&amp;#
+x3c;/a&gt;
+  * &lt;a href="#destroy"&gt;&lt;code&gt;&lt;b&gt;leveldown.destroy()&lt;/b&gt;&lt;/code&gt;&lt;/
+a&gt;
+  * &lt;a href="#repair"&gt;&lt;code&gt;&lt;b&gt;leveldown.<span class="apidocCodeKeywordSpan">repair</span>()&lt;/b&gt;&lt;/code&gt;&lt;/a&gt;
+
+### Special Notes
+  * &lt;a href="#writeStreams"&gt;What happened to &lt;code&gt;&lt;b&gt;db.createWriteStream()&lt;/b&gt;
+;&lt;/code&gt;&lt;/a&gt;
+
+
+--------------------------------------------------------
+&lt;a name="ctor"&gt;&lt;/a&gt;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.levelup.super_" id="apidoc.element.levelup.super_">
+        function <span class="apidocSignatureSpan">levelup.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.levelup.batch" id="apidoc.module.levelup.batch">module levelup.batch</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.levelup.batch.batch" id="apidoc.element.levelup.batch.batch">
+        function <span class="apidocSignatureSpan">levelup.</span>batch
+        <span class="apidocSignatureSpan">(levelup, codec)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Batch(levelup, codec) {
+  this._levelup = levelup
+  this._codec = codec
+  this.batch = levelup.db.batch()
+  this.ops = []
+  this.length = 0
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Encoding of the `key` object will adhere to the `'keyEncoding'` option provided to &lt;a href="#ctor"&gt;
+;&lt;code&gt;levelup()&lt;/code&gt;&lt;/a&gt;, although you can provide alternative encoding settings in the options
+ for `del()` (it's recommended that you stay consistent in your encoding of keys and values in a single store).
+
+A `'sync'` option can also be passed, see &lt;a href="#put"&gt;&lt;code&gt;put()&lt;/code&gt;&lt;
+;/a&gt; for details on how this works.
+
+--------------------------------------------------------
+&lt;a name="batch"&gt;&lt;/a&gt;
+### db.<span class="apidocCodeKeywordSpan">batch</span>(array[, options][, callback]) *(array form)*
+&lt;code&gt;batch()&lt;/code&gt; can be used for very fast bulk-write operations (both *put* and *delete*). The `array`
+argument should contain a list of operations to be executed sequentially, although as a whole they are performed as an atomic operation
+ inside LevelDB.
+
+Each operation is contained in an object having the following properties: `type`, `key`, `value`, where the *type* is either `&amp;#
+x27;put'` or `'del'`. In the case of `'del'` the `'value'` property is ignored. Any entries with
+ a `'key'` of `null` or `undefined` will cause an error to be returned on the `callback` and any `'type': &amp;#
+x27;put'` entry with a `'value'` of `null` or `undefined` will return an error.
+
+If `key` and `value` are defined but `type` is not, it will default to `'put'`.
+
+```js
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.levelup.batch.prototype" id="apidoc.module.levelup.batch.prototype">module levelup.batch.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.levelup.batch.prototype.clear" id="apidoc.element.levelup.batch.prototype.clear">
+        function <span class="apidocSignatureSpan">levelup.batch.prototype.</span>clear
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clear = function () {
+  try {
+    this.batch.clear()
+  } catch (err) {
+    throw new WriteError(err)
+  }
+
+  this.ops = []
+  this.length = 0
+  return this
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Queue a *del* operation on the current batch, not committed until a `write()` is called on the batch.
+
+The optional `options` argument can be used to override the default `'keyEncoding'`.
+
+This method may `throw` a `WriteError` if there is a problem with your delete.
+
+&lt;b&gt;&lt;code&gt;batch.<span class="apidocCodeKeywordSpan">clear</span>()&lt;/code&gt;&lt;/b&gt;
+
+Clear all queued operations on the current batch, any previous operations will be discarded.
+
+&lt;b&gt;&lt;code&gt;batch.length&lt;/code&gt;&lt;/b&gt;
+
+The number of queued operations on the current batch.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.levelup.batch.prototype.del" id="apidoc.element.levelup.batch.prototype.del">
+        function <span class="apidocSignatureSpan">levelup.batch.prototype.</span>del
+        <span class="apidocSignatureSpan">(key_, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">del = function (key_, options) {
+  options = getOptions(options)
+
+  var key = this._codec.encodeKey(key_, options)
+
+  try {
+    this.batch.del(key)
+  } catch (err) {
+    throw new WriteError(err)
+  }
+  this.ops.push({ type : 'del', key : key })
+  this.length++
+
+  return this
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Encoding of the `key` and `value` objects is the same as in &lt;a href="#put"&gt;&lt;code&gt;put&lt;/code&gt;
+;&lt;/a&gt;.
+
+LevelDB will by default fill the in-memory LRU Cache with data from a call to get. Disabling this is done by setting `fillCache`
+to `false`.
+
+--------------------------------------------------------
+&lt;a name="del"&gt;&lt;/a&gt;
+### db.<span class="apidocCodeKeywordSpan">del</span>(key[, options][, callback])
+&lt;code&gt;del()&lt;/code&gt; is the primary method for removing data from the store.
+```js
+db.del('foo', function (err) {
+  if (err)
+    // handle I/O or other error
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.levelup.batch.prototype.put" id="apidoc.element.levelup.batch.prototype.put">
+        function <span class="apidocSignatureSpan">levelup.batch.prototype.</span>put
+        <span class="apidocSignatureSpan">(key_, value_, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">put = function (key_, value_, options) {
+  options = getOptions(options)
+
+  var key   = this._codec.encodeKey(key_, options)
+    , value = this._codec.encodeValue(value_, options)
+
+  try {
+    this.batch.put(key, value)
+  } catch (e) {
+    throw new WriteError(e)
+  }
+  this.ops.push({ type : 'put', key : key, value : value })
+  this.length++
+
+  return this
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var levelup = require('levelup')
+
+// 1) Create our database, supply location and options.
+//    This will create or open the underlying LevelDB store.
+var db = levelup('./mydb')
+
+// 2) put a key &amp; value
+db.<span class="apidocCodeKeywordSpan">put</span>('name', 'LevelUP', function (err) {
+  if (err) return console.log('Ooops!', err) // some kind of I/O error
+
+  // 3) fetch by key
+  db.get('name', function (err, value) {
+if (err) return console.log('Ooops!', err) // likely the key was not found
+
+// ta da!
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.levelup.batch.prototype.write" id="apidoc.element.levelup.batch.prototype.write">
+        function <span class="apidocSignatureSpan">levelup.batch.prototype.</span>write
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (callback) {
+  var levelup = this._levelup
+    , ops     = this.ops
+
+  try {
+    this.batch.write(function (err) {
+      if (err)
+        return dispatchError(levelup, new WriteError(err), callback)
+      levelup.emit('batch', ops)
+      if (callback)
+        callback()
+    })
+  } catch (err) {
+    throw new WriteError(err)
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+db.batch()
+  .del('father')
+  .put('name', 'Yuri Irsenovich Kim')
+  .put('dob', '16 February 1941')
+  .put('spouse', 'Kim Young-sook')
+  .put('occupation', 'Clown')
+  .<span class="apidocCodeKeywordSpan">write</span>(function () { console.log('Done!') })
+```
+
+&lt;b&gt;&lt;code&gt;batch.put(key, value[, options])&lt;/code&gt;&lt;/b&gt;
+
+Queue a *put* operation on the current batch, not committed until a `write()` is called on the batch.
+
+The optional `options` argument can be used to override the default `'keyEncoding'` and/or `'valueEncoding'`.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.levelup.errors" id="apidoc.module.levelup.errors">module levelup.errors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.levelup.errors.EncodingError" id="apidoc.element.levelup.errors.EncodingError">
+        function <span class="apidocSignatureSpan">levelup.errors.</span>EncodingError
+        <span class="apidocSignatureSpan">(message, cause)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">EncodingError = function (message, cause) {
+  init.call(this, type, message, cause)
+  //TODO: the specificity here is stupid, errno should be available everywhere
+  if (type == 'FilesystemError') {
+    this.code    = this.cause.code
+    this.path    = this.cause.path
+    this.errno   = this.cause.errno
+    this.message =
+      (errno.errno[this.cause.errno]
+        ? errno.errno[this.cause.errno].description
+        : this.cause.message)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
+  }
+  Error.call(this)
+  if (Error.captureStackTrace)
+    Error.captureStackTrace(this, arguments.callee)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.levelup.errors.InitializationError" id="apidoc.element.levelup.errors.InitializationError">
+        function <span class="apidocSignatureSpan">levelup.errors.</span>InitializationError
+        <span class="apidocSignatureSpan">(message, cause)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">InitializationError = function (message, cause) {
+  init.call(this, type, message, cause)
+  //TODO: the specificity here is stupid, errno should be available everywhere
+  if (type == 'FilesystemError') {
+    this.code    = this.cause.code
+    this.path    = this.cause.path
+    this.errno   = this.cause.errno
+    this.message =
+      (errno.errno[this.cause.errno]
+        ? errno.errno[this.cause.errno].description
+        : this.cause.message)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
+  }
+  Error.call(this)
+  if (Error.captureStackTrace)
+    Error.captureStackTrace(this, arguments.callee)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.levelup.errors.LevelUPError" id="apidoc.element.levelup.errors.LevelUPError">
+        function <span class="apidocSignatureSpan">levelup.errors.</span>LevelUPError
+        <span class="apidocSignatureSpan">(message, cause)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">LevelUPError = function (message, cause) {
+  init.call(this, type, message, cause)
+  //TODO: the specificity here is stupid, errno should be available everywhere
+  if (type == 'FilesystemError') {
+    this.code    = this.cause.code
+    this.path    = this.cause.path
+    this.errno   = this.cause.errno
+    this.message =
+      (errno.errno[this.cause.errno]
+        ? errno.errno[this.cause.errno].description
+        : this.cause.message)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
+  }
+  Error.call(this)
+  if (Error.captureStackTrace)
+    Error.captureStackTrace(this, arguments.callee)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.levelup.errors.NotFoundError" id="apidoc.element.levelup.errors.NotFoundError">
+        function <span class="apidocSignatureSpan">levelup.errors.</span>NotFoundError
+        <span class="apidocSignatureSpan">(message, cause)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">NotFoundError = function (message, cause) {
+  init.call(this, type, message, cause)
+  //TODO: the specificity here is stupid, errno should be available everywhere
+  if (type == 'FilesystemError') {
+    this.code    = this.cause.code
+    this.path    = this.cause.path
+    this.errno   = this.cause.errno
+    this.message =
+      (errno.errno[this.cause.errno]
+        ? errno.errno[this.cause.errno].description
+        : this.cause.message)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
+  }
+  Error.call(this)
+  if (Error.captureStackTrace)
+    Error.captureStackTrace(this, arguments.callee)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.levelup.errors.OpenError" id="apidoc.element.levelup.errors.OpenError">
+        function <span class="apidocSignatureSpan">levelup.errors.</span>OpenError
+        <span class="apidocSignatureSpan">(message, cause)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">OpenError = function (message, cause) {
+  init.call(this, type, message, cause)
+  //TODO: the specificity here is stupid, errno should be available everywhere
+  if (type == 'FilesystemError') {
+    this.code    = this.cause.code
+    this.path    = this.cause.path
+    this.errno   = this.cause.errno
+    this.message =
+      (errno.errno[this.cause.errno]
+        ? errno.errno[this.cause.errno].description
+        : this.cause.message)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
+  }
+  Error.call(this)
+  if (Error.captureStackTrace)
+    Error.captureStackTrace(this, arguments.callee)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.levelup.errors.ReadError" id="apidoc.element.levelup.errors.ReadError">
+        function <span class="apidocSignatureSpan">levelup.errors.</span>ReadError
+        <span class="apidocSignatureSpan">(message, cause)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ReadError = function (message, cause) {
+  init.call(this, type, message, cause)
+  //TODO: the specificity here is stupid, errno should be available everywhere
+  if (type == 'FilesystemError') {
+    this.code    = this.cause.code
+    this.path    = this.cause.path
+    this.errno   = this.cause.errno
+    this.message =
+      (errno.errno[this.cause.errno]
+        ? errno.errno[this.cause.errno].description
+        : this.cause.message)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
+  }
+  Error.call(this)
+  if (Error.captureStackTrace)
+    Error.captureStackTrace(this, arguments.callee)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.levelup.errors.WriteError" id="apidoc.element.levelup.errors.WriteError">
+        function <span class="apidocSignatureSpan">levelup.errors.</span>WriteError
+        <span class="apidocSignatureSpan">(message, cause)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">WriteError = function (message, cause) {
+  init.call(this, type, message, cause)
+  //TODO: the specificity here is stupid, errno should be available everywhere
+  if (type == 'FilesystemError') {
+    this.code    = this.cause.code
+    this.path    = this.cause.path
+    this.errno   = this.cause.errno
+    this.message =
+      (errno.errno[this.cause.errno]
+        ? errno.errno[this.cause.errno].description
+        : this.cause.message)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
+  }
+  Error.call(this)
+  if (Error.captureStackTrace)
+    Error.captureStackTrace(this, arguments.callee)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.levelup.util" id="apidoc.module.levelup.util">module levelup.util</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.levelup.util.dispatchError" id="apidoc.element.levelup.util.dispatchError">
+        function <span class="apidocSignatureSpan">levelup.util.</span>dispatchError
+        <span class="apidocSignatureSpan">(db, error, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function dispatchError(db, error, callback) {
+  typeof callback == 'function' ? callback(error) : db.emit('error', error)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.levelup.util.getLevelDOWN" id="apidoc.element.levelup.util.getLevelDOWN">
+        function <span class="apidocSignatureSpan">levelup.util.</span>getLevelDOWN
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getLevelDOWN() {
+  if (leveldown)
+    return leveldown
+
+  var requiredVersion  = require('../package.json').devDependencies.leveldown
+    , leveldownVersion
+
+  try {
+    leveldownVersion = require('leveldown/package.json').version
+  } catch (e) {
+    throw requireError(e)
+  }
+
+  if (!require('semver').satisfies(leveldownVersion, requiredVersion)) {
+    throw new LevelUPError(
+        'Installed version of LevelDOWN ('
+      + leveldownVersion
+      + ') does not match required version ('
+      + requiredVersion
+      + ')'
+    )
+  }
+
+  try {
+    return leveldown = require('leveldown')
+  } catch (e) {
+    throw requireError(e)
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.levelup.util.getOptions" id="apidoc.element.levelup.util.getOptions">
+        function <span class="apidocSignatureSpan">levelup.util.</span>getOptions
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getOptions(options) {
+  if (typeof options == 'string')
+    options = { valueEncoding: options }
+  if (typeof options != 'object')
+    options = {}
+  return options
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.levelup.util.isDefined" id="apidoc.element.levelup.util.isDefined">
+        function <span class="apidocSignatureSpan">levelup.util.</span>isDefined
+        <span class="apidocSignatureSpan">(v)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isDefined(v) {
+  return typeof v !== 'undefined'
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
