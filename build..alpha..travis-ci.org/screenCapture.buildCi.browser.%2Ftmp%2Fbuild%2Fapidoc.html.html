@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/level/levelup"
-
-    >levelup (v1.3.5)</a>
+    <a href="https://github.com/level/levelup">levelup (v1.3.5)</a>
 </h1>
-<h4>Fast & simple storage - a Node.js-style LevelDB wrapper</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<h4>Fast &amp; simple storage - a Node.js-style LevelDB wrapper</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.levelup">module levelup</a><ol>
 
@@ -516,24 +509,24 @@
   EventEmitter.call(this)
   this.setMaxListeners(Infinity)
 
-  if (typeof location == &#x27;function&#x27;) {
-    options = typeof options == &#x27;object&#x27; ? options : {}
+  if (typeof location == 'function') {
+    options = typeof options == 'object' ? options : {}
     options.db = location
     location = null
-  } else if (typeof location == &#x27;object&#x27; &#x26;&#x26; typeof location.db == &#x27;function&#x27;) {
+  } else if (typeof location == 'object' &amp;&amp; typeof location.db == 'function') {
     options = location
     location = null
   }
 
 
-  if (typeof options == &#x27;function&#x27;) {
+  if (typeof options == 'function') {
     callback = options
     options  = {}
   }
 
-  if ((!options || typeof options.db != &#x27;function&#x27;) &#x26;&#x26; typeof location != &#x27;string&#x27;) {
+  if ((!options || typeof options.db != 'function') &amp;&amp; typeof location != 'string') {
     error = new InitializationError(
-        &#x27;Must provide a location for the database&#x27;)
+        'Must provide a location for the database')
     if (callback) {
       return process.nextTick(function () {
         callback(error)
@@ -545,9 +538,9 @@
   options      = getOptions(options)
   this.options = extend(defaultOptions, options)
   this._codec = new Codec(this.options)
-  this._status = &#x27;new&#x27;
+  this._status = 'new'
   // set this.location as enumerable but not configurable or writable
-  prr(this, &#x27;location&#x27;, location, &#x27;e&#x27;)
+  prr(this, 'location', location, 'e')
 
   this.open(callback)
 }</pre></li>
@@ -572,26 +565,26 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-Encoding of the `key` object will adhere to the `&#x27;keyEncoding&#x27;` option provided to &#x3c;a href=&#x22;#ctor&#x22;&#x3e
-;&#x3c;code&#x3e;levelup()&#x3c;/code&#x3e;&#x3c;/a&#x3e;, although you can provide alternative encoding settings in the options
- for `del()` (it&#x27;s recommended that you stay consistent in your encoding of keys and values in a single store).
+Encoding of the `key` object will adhere to the `'keyEncoding'` option provided to &lt;a href="#ctor"&gt;
+;&lt;code&gt;levelup()&lt;/code&gt;&lt;/a&gt;, although you can provide alternative encoding settings in the options
+ for `del()` (it's recommended that you stay consistent in your encoding of keys and values in a single store).
 
-A `&#x27;sync&#x27;` option can also be passed, see &#x3c;a href=&#x22;#put&#x22;&#x3e;&#x3c;code&#x3e;put()&#x3c;/code&#x3e;&#x3c
-;/a&#x3e; for details on how this works.
+A `'sync'` option can also be passed, see &lt;a href="#put"&gt;&lt;code&gt;put()&lt;/code&gt;&lt;
+;/a&gt; for details on how this works.
 
 --------------------------------------------------------
-&#x3c;a name=&#x22;batch&#x22;&#x3e;&#x3c;/a&#x3e;
+&lt;a name="batch"&gt;&lt;/a&gt;
 ### db.<span class="apidocCodeKeywordSpan">batch</span>(array[, options][, callback]) *(array form)*
-&#x3c;code&#x3e;batch()&#x3c;/code&#x3e; can be used for very fast bulk-write operations (both *put* and *delete*). The `array`
+&lt;code&gt;batch()&lt;/code&gt; can be used for very fast bulk-write operations (both *put* and *delete*). The `array`
 argument should contain a list of operations to be executed sequentially, although as a whole they are performed as an atomic operation
  inside LevelDB.
 
-Each operation is contained in an object having the following properties: `type`, `key`, `value`, where the *type* is either `&#
-x27;put&#x27;` or `&#x27;del&#x27;`. In the case of `&#x27;del&#x27;` the `&#x27;value&#x27;` property is ignored. Any entries with
- a `&#x27;key&#x27;` of `null` or `undefined` will cause an error to be returned on the `callback` and any `&#x27;type&#x27;: &#
-x27;put&#x27;` entry with a `&#x27;value&#x27;` of `null` or `undefined` will return an error.
+Each operation is contained in an object having the following properties: `type`, `key`, `value`, where the *type* is either `&amp;#
+x27;put'` or `'del'`. In the case of `'del'` the `'value'` property is ignored. Any entries with
+ a `'key'` of `null` or `undefined` will cause an error to be returned on the `callback` and any `'type': &amp;#
+x27;put'` entry with a `'value'` of `null` or `undefined` will return an error.
 
-If `key` and `value` are defined but `type` is not, it will default to `&#x27;put&#x27;`.
+If `key` and `value` are defined but `type` is not, it will default to `'put'`.
 
 ```js
 ...</pre></li>
@@ -614,25 +607,24 @@ If `key` and `value` are defined but `type` is not, it will default to `&#x27;pu
   return fn.apply(this, arguments);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  * &#x3c;a href=&#x22;#createKeyStream&#x22;&#x3e;&#x3c;code&#x3e;db.&#x3c;b&#x3e;createKeyStream()&#x3c;/b&#x3e;&#x3c;/code&#x3e
-;&#x3c;/a&#x3e;
-  * &#x3c;a href=&#x22;#createValueStream&#x22;&#x3e;&#x3c;code&#x3e;db.&#x3c;b&#x3e;createValueStream()&#x3c;/b&#x3e;&#x3c;/code
-&#x3e;&#x3c;/a&#x3e;
+  * &lt;a href="#createKeyStream"&gt;&lt;code&gt;db.&lt;b&gt;createKeyStream()&lt;/b&gt;&lt;/code&gt;
+;&lt;/a&gt;
+  * &lt;a href="#createValueStream"&gt;&lt;code&gt;db.&lt;b&gt;createValueStream()&lt;/b&gt;&lt;/code
+&gt;&lt;/a&gt;
 
 ### Special operations exposed by LevelDOWN
 
-  * &#x3c;a href=&#x22;#approximateSize&#x22;&#x3e;&#x3c;code&#x3e;db.db.&#x3c;b&#x3e;approximateSize()&#x3c;/b&#x3e;&#x3c;/code
-&#x3e;&#x3c;/a&#x3e;
-  * &#x3c;a href=&#x22;#getProperty&#x22;&#x3e;&#x3c;code&#x3e;db.db.&#x3c;b&#x3e;getProperty()&#x3c;/b&#x3e;&#x3c;/code&#x3e;&#
-x3c;/a&#x3e;
-  * &#x3c;a href=&#x22;#destroy&#x22;&#x3e;&#x3c;code&#x3e;&#x3c;b&#x3e;leveldown.<span class="apidocCodeKeywordSpan">destroy</span
->()&#x3c;/b&#x3e;&#x3c;/code&#x3e;&#x3c;/a&#x3e;
-  * &#x3c;a href=&#x22;#repair&#x22;&#x3e;&#x3c;code&#x3e;&#x3c;b&#x3e;leveldown.repair()&#x3c;/b&#x3e;&#x3c;/code&#x3e;&#x3c;/a
-&#x3e;
+  * &lt;a href="#approximateSize"&gt;&lt;code&gt;db.db.&lt;b&gt;approximateSize()&lt;/b&gt;&lt;/code
+&gt;&lt;/a&gt;
+  * &lt;a href="#getProperty"&gt;&lt;code&gt;db.db.&lt;b&gt;getProperty()&lt;/b&gt;&lt;/code&gt;&amp;#
+x3c;/a&gt;
+  * &lt;a href="#destroy"&gt;&lt;code&gt;&lt;b&gt;leveldown.<span class="apidocCodeKeywordSpan">destroy</span>()&lt;/b&gt;&lt;/code&gt;&lt;/a&gt;
+  * &lt;a href="#repair"&gt;&lt;code&gt;&lt;b&gt;leveldown.repair()&lt;/b&gt;&lt;/code&gt;&lt;/a
+&gt;
 
 ### Special Notes
-  * &#x3c;a href=&#x22;#writeStreams&#x22;&#x3e;What happened to &#x3c;code&#x3e;&#x3c;b&#x3e;db.createWriteStream()&#x3c;/b&#x3e
-;&#x3c;/code&#x3e;&#x3c;/a&#x3e;
+  * &lt;a href="#writeStreams"&gt;What happened to &lt;code&gt;&lt;b&gt;db.createWriteStream()&lt;/b&gt;
+;&lt;/code&gt;&lt;/a&gt;
 
 
 --------------------------------------------------------
@@ -651,7 +643,7 @@ x3c;/a&#x3e;
     <li>description and source-code<pre class="apidocCodePre">errors.EncodingError = function (message, cause) {
   init.call(this, type, message, cause)
   //TODO: the specificity here is stupid, errno should be available everywhere
-  if (type == &#x27;FilesystemError&#x27;) {
+  if (type == 'FilesystemError') {
     this.code    = this.cause.code
     this.path    = this.cause.path
     this.errno   = this.cause.errno
@@ -659,7 +651,7 @@ x3c;/a&#x3e;
       (errno.errno[this.cause.errno]
         ? errno.errno[this.cause.errno].description
         : this.cause.message)
-      + (this.cause.path ? &#x27; [&#x27; + this.cause.path + &#x27;]&#x27; : &#x27;&#x27;)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
   }
   Error.call(this)
   if (Error.captureStackTrace)
@@ -680,7 +672,7 @@ x3c;/a&#x3e;
     <li>description and source-code<pre class="apidocCodePre">errors.InitializationError = function (message, cause) {
   init.call(this, type, message, cause)
   //TODO: the specificity here is stupid, errno should be available everywhere
-  if (type == &#x27;FilesystemError&#x27;) {
+  if (type == 'FilesystemError') {
     this.code    = this.cause.code
     this.path    = this.cause.path
     this.errno   = this.cause.errno
@@ -688,7 +680,7 @@ x3c;/a&#x3e;
       (errno.errno[this.cause.errno]
         ? errno.errno[this.cause.errno].description
         : this.cause.message)
-      + (this.cause.path ? &#x27; [&#x27; + this.cause.path + &#x27;]&#x27; : &#x27;&#x27;)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
   }
   Error.call(this)
   if (Error.captureStackTrace)
@@ -709,7 +701,7 @@ x3c;/a&#x3e;
     <li>description and source-code<pre class="apidocCodePre">errors.LevelUPError = function (message, cause) {
   init.call(this, type, message, cause)
   //TODO: the specificity here is stupid, errno should be available everywhere
-  if (type == &#x27;FilesystemError&#x27;) {
+  if (type == 'FilesystemError') {
     this.code    = this.cause.code
     this.path    = this.cause.path
     this.errno   = this.cause.errno
@@ -717,7 +709,7 @@ x3c;/a&#x3e;
       (errno.errno[this.cause.errno]
         ? errno.errno[this.cause.errno].description
         : this.cause.message)
-      + (this.cause.path ? &#x27; [&#x27; + this.cause.path + &#x27;]&#x27; : &#x27;&#x27;)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
   }
   Error.call(this)
   if (Error.captureStackTrace)
@@ -738,7 +730,7 @@ x3c;/a&#x3e;
     <li>description and source-code<pre class="apidocCodePre">errors.NotFoundError = function (message, cause) {
   init.call(this, type, message, cause)
   //TODO: the specificity here is stupid, errno should be available everywhere
-  if (type == &#x27;FilesystemError&#x27;) {
+  if (type == 'FilesystemError') {
     this.code    = this.cause.code
     this.path    = this.cause.path
     this.errno   = this.cause.errno
@@ -746,7 +738,7 @@ x3c;/a&#x3e;
       (errno.errno[this.cause.errno]
         ? errno.errno[this.cause.errno].description
         : this.cause.message)
-      + (this.cause.path ? &#x27; [&#x27; + this.cause.path + &#x27;]&#x27; : &#x27;&#x27;)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
   }
   Error.call(this)
   if (Error.captureStackTrace)
@@ -767,7 +759,7 @@ x3c;/a&#x3e;
     <li>description and source-code<pre class="apidocCodePre">errors.OpenError = function (message, cause) {
   init.call(this, type, message, cause)
   //TODO: the specificity here is stupid, errno should be available everywhere
-  if (type == &#x27;FilesystemError&#x27;) {
+  if (type == 'FilesystemError') {
     this.code    = this.cause.code
     this.path    = this.cause.path
     this.errno   = this.cause.errno
@@ -775,7 +767,7 @@ x3c;/a&#x3e;
       (errno.errno[this.cause.errno]
         ? errno.errno[this.cause.errno].description
         : this.cause.message)
-      + (this.cause.path ? &#x27; [&#x27; + this.cause.path + &#x27;]&#x27; : &#x27;&#x27;)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
   }
   Error.call(this)
   if (Error.captureStackTrace)
@@ -796,7 +788,7 @@ x3c;/a&#x3e;
     <li>description and source-code<pre class="apidocCodePre">errors.ReadError = function (message, cause) {
   init.call(this, type, message, cause)
   //TODO: the specificity here is stupid, errno should be available everywhere
-  if (type == &#x27;FilesystemError&#x27;) {
+  if (type == 'FilesystemError') {
     this.code    = this.cause.code
     this.path    = this.cause.path
     this.errno   = this.cause.errno
@@ -804,7 +796,7 @@ x3c;/a&#x3e;
       (errno.errno[this.cause.errno]
         ? errno.errno[this.cause.errno].description
         : this.cause.message)
-      + (this.cause.path ? &#x27; [&#x27; + this.cause.path + &#x27;]&#x27; : &#x27;&#x27;)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
   }
   Error.call(this)
   if (Error.captureStackTrace)
@@ -825,7 +817,7 @@ x3c;/a&#x3e;
     <li>description and source-code<pre class="apidocCodePre">errors.WriteError = function (message, cause) {
   init.call(this, type, message, cause)
   //TODO: the specificity here is stupid, errno should be available everywhere
-  if (type == &#x27;FilesystemError&#x27;) {
+  if (type == 'FilesystemError') {
     this.code    = this.cause.code
     this.path    = this.cause.path
     this.errno   = this.cause.errno
@@ -833,7 +825,7 @@ x3c;/a&#x3e;
       (errno.errno[this.cause.errno]
         ? errno.errno[this.cause.errno].description
         : this.cause.message)
-      + (this.cause.path ? &#x27; [&#x27; + this.cause.path + &#x27;]&#x27; : &#x27;&#x27;)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
   }
   Error.call(this)
   if (Error.captureStackTrace)
@@ -859,27 +851,26 @@ x3c;/a&#x3e;
   return fn.apply(this, arguments);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  * &#x3c;a href=&#x22;#createValueStream&#x22;&#x3e;&#x3c;code&#x3e;db.&#x3c;b&#x3e;createValueStream()&#x3c;/b&#x3e;&#x3c;/code
-&#x3e;&#x3c;/a&#x3e;
+  * &lt;a href="#createValueStream"&gt;&lt;code&gt;db.&lt;b&gt;createValueStream()&lt;/b&gt;&lt;/code
+&gt;&lt;/a&gt;
 
 ### Special operations exposed by LevelDOWN
 
-  * &#x3c;a href=&#x22;#approximateSize&#x22;&#x3e;&#x3c;code&#x3e;db.db.&#x3c;b&#x3e;approximateSize()&#x3c;/b&#x3e;&#x3c;/code
-&#x3e;&#x3c;/a&#x3e;
-  * &#x3c;a href=&#x22;#getProperty&#x22;&#x3e;&#x3c;code&#x3e;db.db.&#x3c;b&#x3e;getProperty()&#x3c;/b&#x3e;&#x3c;/code&#x3e;&#
-x3c;/a&#x3e;
-  * &#x3c;a href=&#x22;#destroy&#x22;&#x3e;&#x3c;code&#x3e;&#x3c;b&#x3e;leveldown.destroy()&#x3c;/b&#x3e;&#x3c;/code&#x3e;&#x3c;/
-a&#x3e;
-  * &#x3c;a href=&#x22;#repair&#x22;&#x3e;&#x3c;code&#x3e;&#x3c;b&#x3e;leveldown.<span class="apidocCodeKeywordSpan">repair</span
->()&#x3c;/b&#x3e;&#x3c;/code&#x3e;&#x3c;/a&#x3e;
+  * &lt;a href="#approximateSize"&gt;&lt;code&gt;db.db.&lt;b&gt;approximateSize()&lt;/b&gt;&lt;/code
+&gt;&lt;/a&gt;
+  * &lt;a href="#getProperty"&gt;&lt;code&gt;db.db.&lt;b&gt;getProperty()&lt;/b&gt;&lt;/code&gt;&amp;#
+x3c;/a&gt;
+  * &lt;a href="#destroy"&gt;&lt;code&gt;&lt;b&gt;leveldown.destroy()&lt;/b&gt;&lt;/code&gt;&lt;/
+a&gt;
+  * &lt;a href="#repair"&gt;&lt;code&gt;&lt;b&gt;leveldown.<span class="apidocCodeKeywordSpan">repair</span>()&lt;/b&gt;&lt;/code&gt;&lt;/a&gt;
 
 ### Special Notes
-  * &#x3c;a href=&#x22;#writeStreams&#x22;&#x3e;What happened to &#x3c;code&#x3e;&#x3c;b&#x3e;db.createWriteStream()&#x3c;/b&#x3e
-;&#x3c;/code&#x3e;&#x3c;/a&#x3e;
+  * &lt;a href="#writeStreams"&gt;What happened to &lt;code&gt;&lt;b&gt;db.createWriteStream()&lt;/b&gt;
+;&lt;/code&gt;&lt;/a&gt;
 
 
 --------------------------------------------------------
-&#x3c;a name=&#x22;ctor&#x22;&#x3e;&#x3c;/a&#x3e;
+&lt;a name="ctor"&gt;&lt;/a&gt;
 ...</pre></li>
     </ul>
 
@@ -942,26 +933,26 @@ a&#x3e;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-Encoding of the `key` object will adhere to the `&#x27;keyEncoding&#x27;` option provided to &#x3c;a href=&#x22;#ctor&#x22;&#x3e
-;&#x3c;code&#x3e;levelup()&#x3c;/code&#x3e;&#x3c;/a&#x3e;, although you can provide alternative encoding settings in the options
- for `del()` (it&#x27;s recommended that you stay consistent in your encoding of keys and values in a single store).
+Encoding of the `key` object will adhere to the `'keyEncoding'` option provided to &lt;a href="#ctor"&gt;
+;&lt;code&gt;levelup()&lt;/code&gt;&lt;/a&gt;, although you can provide alternative encoding settings in the options
+ for `del()` (it's recommended that you stay consistent in your encoding of keys and values in a single store).
 
-A `&#x27;sync&#x27;` option can also be passed, see &#x3c;a href=&#x22;#put&#x22;&#x3e;&#x3c;code&#x3e;put()&#x3c;/code&#x3e;&#x3c
-;/a&#x3e; for details on how this works.
+A `'sync'` option can also be passed, see &lt;a href="#put"&gt;&lt;code&gt;put()&lt;/code&gt;&lt;
+;/a&gt; for details on how this works.
 
 --------------------------------------------------------
-&#x3c;a name=&#x22;batch&#x22;&#x3e;&#x3c;/a&#x3e;
+&lt;a name="batch"&gt;&lt;/a&gt;
 ### db.<span class="apidocCodeKeywordSpan">batch</span>(array[, options][, callback]) *(array form)*
-&#x3c;code&#x3e;batch()&#x3c;/code&#x3e; can be used for very fast bulk-write operations (both *put* and *delete*). The `array`
+&lt;code&gt;batch()&lt;/code&gt; can be used for very fast bulk-write operations (both *put* and *delete*). The `array`
 argument should contain a list of operations to be executed sequentially, although as a whole they are performed as an atomic operation
  inside LevelDB.
 
-Each operation is contained in an object having the following properties: `type`, `key`, `value`, where the *type* is either `&#
-x27;put&#x27;` or `&#x27;del&#x27;`. In the case of `&#x27;del&#x27;` the `&#x27;value&#x27;` property is ignored. Any entries with
- a `&#x27;key&#x27;` of `null` or `undefined` will cause an error to be returned on the `callback` and any `&#x27;type&#x27;: &#
-x27;put&#x27;` entry with a `&#x27;value&#x27;` of `null` or `undefined` will return an error.
+Each operation is contained in an object having the following properties: `type`, `key`, `value`, where the *type* is either `&amp;#
+x27;put'` or `'del'`. In the case of `'del'` the `'value'` property is ignored. Any entries with
+ a `'key'` of `null` or `undefined` will cause an error to be returned on the `callback` and any `'type': &amp;#
+x27;put'` entry with a `'value'` of `null` or `undefined` will return an error.
 
-If `key` and `value` are defined but `type` is not, it will default to `&#x27;put&#x27;`.
+If `key` and `value` are defined but `type` is not, it will default to `'put'`.
 
 ```js
 ...</pre></li>
@@ -996,15 +987,15 @@ If `key` and `value` are defined but `type` is not, it will default to `&#x27;pu
 
 Queue a *del* operation on the current batch, not committed until a `write()` is called on the batch.
 
-The optional `options` argument can be used to override the default `&#x27;keyEncoding&#x27;`.
+The optional `options` argument can be used to override the default `'keyEncoding'`.
 
 This method may `throw` a `WriteError` if there is a problem with your delete.
 
-&#x3c;b&#x3e;&#x3c;code&#x3e;batch.<span class="apidocCodeKeywordSpan">clear</span>()&#x3c;/code&#x3e;&#x3c;/b&#x3e;
+&lt;b&gt;&lt;code&gt;batch.<span class="apidocCodeKeywordSpan">clear</span>()&lt;/code&gt;&lt;/b&gt;
 
 Clear all queued operations on the current batch, any previous operations will be discarded.
 
-&#x3c;b&#x3e;&#x3c;code&#x3e;batch.length&#x3c;/code&#x3e;&#x3c;/b&#x3e;
+&lt;b&gt;&lt;code&gt;batch.length&lt;/code&gt;&lt;/b&gt;
 
 The number of queued operations on the current batch.
 ...</pre></li>
@@ -1029,25 +1020,25 @@ The number of queued operations on the current batch.
   } catch (err) {
     throw new WriteError(err)
   }
-  this.ops.push({ type : &#x27;del&#x27;, key : key })
+  this.ops.push({ type : 'del', key : key })
   this.length++
 
   return this
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-Encoding of the `key` and `value` objects is the same as in &#x3c;a href=&#x22;#put&#x22;&#x3e;&#x3c;code&#x3e;put&#x3c;/code&#x3e
-;&#x3c;/a&#x3e;.
+Encoding of the `key` and `value` objects is the same as in &lt;a href="#put"&gt;&lt;code&gt;put&lt;/code&gt;
+;&lt;/a&gt;.
 
 LevelDB will by default fill the in-memory LRU Cache with data from a call to get. Disabling this is done by setting `fillCache`
 to `false`.
 
 --------------------------------------------------------
-&#x3c;a name=&#x22;del&#x22;&#x3e;&#x3c;/a&#x3e;
+&lt;a name="del"&gt;&lt;/a&gt;
 ### db.<span class="apidocCodeKeywordSpan">del</span>(key[, options][, callback])
-&#x3c;code&#x3e;del()&#x3c;/code&#x3e; is the primary method for removing data from the store.
+&lt;code&gt;del()&lt;/code&gt; is the primary method for removing data from the store.
 ```js
-db.del(&#x27;foo&#x27;, function (err) {
+db.del('foo', function (err) {
   if (err)
     // handle I/O or other error
 });
@@ -1075,25 +1066,25 @@ db.del(&#x27;foo&#x27;, function (err) {
   } catch (e) {
     throw new WriteError(e)
   }
-  this.ops.push({ type : &#x27;put&#x27;, key : key, value : value })
+  this.ops.push({ type : 'put', key : key, value : value })
   this.length++
 
   return this
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var levelup = require(&#x27;levelup&#x27;)
+var levelup = require('levelup')
 
 // 1) Create our database, supply location and options.
 //    This will create or open the underlying LevelDB store.
-var db = levelup(&#x27;./mydb&#x27;)
+var db = levelup('./mydb')
 
-// 2) put a key &#x26; value
-db.<span class="apidocCodeKeywordSpan">put</span>(&#x27;name&#x27;, &#x27;LevelUP&#x27;, function (err) {
-  if (err) return console.log(&#x27;Ooops!&#x27;, err) // some kind of I/O error
+// 2) put a key &amp; value
+db.<span class="apidocCodeKeywordSpan">put</span>('name', 'LevelUP', function (err) {
+  if (err) return console.log('Ooops!', err) // some kind of I/O error
 
   // 3) fetch by key
-  db.get(&#x27;name&#x27;, function (err, value) {
-if (err) return console.log(&#x27;Ooops!&#x27;, err) // likely the key was not found
+  db.get('name', function (err, value) {
+if (err) return console.log('Ooops!', err) // likely the key was not found
 
 // ta da!
 ...</pre></li>
@@ -1116,7 +1107,7 @@ if (err) return console.log(&#x27;Ooops!&#x27;, err) // likely the key was not f
     this.batch.write(function (err) {
       if (err)
         return dispatchError(levelup, new WriteError(err), callback)
-      levelup.emit(&#x27;batch&#x27;, ops)
+      levelup.emit('batch', ops)
       if (callback)
         callback()
     })
@@ -1127,19 +1118,19 @@ if (err) return console.log(&#x27;Ooops!&#x27;, err) // likely the key was not f
     <li>example usage<pre class="apidocCodePre">...
 ```js
 db.batch()
-  .del(&#x27;father&#x27;)
-  .put(&#x27;name&#x27;, &#x27;Yuri Irsenovich Kim&#x27;)
-  .put(&#x27;dob&#x27;, &#x27;16 February 1941&#x27;)
-  .put(&#x27;spouse&#x27;, &#x27;Kim Young-sook&#x27;)
-  .put(&#x27;occupation&#x27;, &#x27;Clown&#x27;)
-  .<span class="apidocCodeKeywordSpan">write</span>(function () { console.log(&#x27;Done!&#x27;) })
+  .del('father')
+  .put('name', 'Yuri Irsenovich Kim')
+  .put('dob', '16 February 1941')
+  .put('spouse', 'Kim Young-sook')
+  .put('occupation', 'Clown')
+  .<span class="apidocCodeKeywordSpan">write</span>(function () { console.log('Done!') })
 ```
 
-&#x3c;b&#x3e;&#x3c;code&#x3e;batch.put(key, value[, options])&#x3c;/code&#x3e;&#x3c;/b&#x3e;
+&lt;b&gt;&lt;code&gt;batch.put(key, value[, options])&lt;/code&gt;&lt;/b&gt;
 
 Queue a *put* operation on the current batch, not committed until a `write()` is called on the batch.
 
-The optional `options` argument can be used to override the default `&#x27;keyEncoding&#x27;` and/or `&#x27;valueEncoding&#x27;`.
+The optional `options` argument can be used to override the default `'keyEncoding'` and/or `'valueEncoding'`.
 ...</pre></li>
     </ul>
 
@@ -1165,25 +1156,24 @@ The optional `options` argument can be used to override the default `&#x27;keyEn
   return fn.apply(this, arguments);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  * &#x3c;a href=&#x22;#createKeyStream&#x22;&#x3e;&#x3c;code&#x3e;db.&#x3c;b&#x3e;createKeyStream()&#x3c;/b&#x3e;&#x3c;/code&#x3e
-;&#x3c;/a&#x3e;
-  * &#x3c;a href=&#x22;#createValueStream&#x22;&#x3e;&#x3c;code&#x3e;db.&#x3c;b&#x3e;createValueStream()&#x3c;/b&#x3e;&#x3c;/code
-&#x3e;&#x3c;/a&#x3e;
+  * &lt;a href="#createKeyStream"&gt;&lt;code&gt;db.&lt;b&gt;createKeyStream()&lt;/b&gt;&lt;/code&gt;
+;&lt;/a&gt;
+  * &lt;a href="#createValueStream"&gt;&lt;code&gt;db.&lt;b&gt;createValueStream()&lt;/b&gt;&lt;/code
+&gt;&lt;/a&gt;
 
 ### Special operations exposed by LevelDOWN
 
-  * &#x3c;a href=&#x22;#approximateSize&#x22;&#x3e;&#x3c;code&#x3e;db.db.&#x3c;b&#x3e;approximateSize()&#x3c;/b&#x3e;&#x3c;/code
-&#x3e;&#x3c;/a&#x3e;
-  * &#x3c;a href=&#x22;#getProperty&#x22;&#x3e;&#x3c;code&#x3e;db.db.&#x3c;b&#x3e;getProperty()&#x3c;/b&#x3e;&#x3c;/code&#x3e;&#
-x3c;/a&#x3e;
-  * &#x3c;a href=&#x22;#destroy&#x22;&#x3e;&#x3c;code&#x3e;&#x3c;b&#x3e;leveldown.<span class="apidocCodeKeywordSpan">destroy</span
->()&#x3c;/b&#x3e;&#x3c;/code&#x3e;&#x3c;/a&#x3e;
-  * &#x3c;a href=&#x22;#repair&#x22;&#x3e;&#x3c;code&#x3e;&#x3c;b&#x3e;leveldown.repair()&#x3c;/b&#x3e;&#x3c;/code&#x3e;&#x3c;/a
-&#x3e;
+  * &lt;a href="#approximateSize"&gt;&lt;code&gt;db.db.&lt;b&gt;approximateSize()&lt;/b&gt;&lt;/code
+&gt;&lt;/a&gt;
+  * &lt;a href="#getProperty"&gt;&lt;code&gt;db.db.&lt;b&gt;getProperty()&lt;/b&gt;&lt;/code&gt;&amp;#
+x3c;/a&gt;
+  * &lt;a href="#destroy"&gt;&lt;code&gt;&lt;b&gt;leveldown.<span class="apidocCodeKeywordSpan">destroy</span>()&lt;/b&gt;&lt;/code&gt;&lt;/a&gt;
+  * &lt;a href="#repair"&gt;&lt;code&gt;&lt;b&gt;leveldown.repair()&lt;/b&gt;&lt;/code&gt;&lt;/a
+&gt;
 
 ### Special Notes
-  * &#x3c;a href=&#x22;#writeStreams&#x22;&#x3e;What happened to &#x3c;code&#x3e;&#x3c;b&#x3e;db.createWriteStream()&#x3c;/b&#x3e
-;&#x3c;/code&#x3e;&#x3c;/a&#x3e;
+  * &lt;a href="#writeStreams"&gt;What happened to &lt;code&gt;&lt;b&gt;db.createWriteStream()&lt;/b&gt;
+;&lt;/code&gt;&lt;/a&gt;
 
 
 --------------------------------------------------------
@@ -1207,7 +1197,7 @@ x3c;/a&#x3e;
     <li>description and source-code<pre class="apidocCodePre">EncodingError = function (message, cause) {
   init.call(this, type, message, cause)
   //TODO: the specificity here is stupid, errno should be available everywhere
-  if (type == &#x27;FilesystemError&#x27;) {
+  if (type == 'FilesystemError') {
     this.code    = this.cause.code
     this.path    = this.cause.path
     this.errno   = this.cause.errno
@@ -1215,7 +1205,7 @@ x3c;/a&#x3e;
       (errno.errno[this.cause.errno]
         ? errno.errno[this.cause.errno].description
         : this.cause.message)
-      + (this.cause.path ? &#x27; [&#x27; + this.cause.path + &#x27;]&#x27; : &#x27;&#x27;)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
   }
   Error.call(this)
   if (Error.captureStackTrace)
@@ -1236,7 +1226,7 @@ x3c;/a&#x3e;
     <li>description and source-code<pre class="apidocCodePre">InitializationError = function (message, cause) {
   init.call(this, type, message, cause)
   //TODO: the specificity here is stupid, errno should be available everywhere
-  if (type == &#x27;FilesystemError&#x27;) {
+  if (type == 'FilesystemError') {
     this.code    = this.cause.code
     this.path    = this.cause.path
     this.errno   = this.cause.errno
@@ -1244,7 +1234,7 @@ x3c;/a&#x3e;
       (errno.errno[this.cause.errno]
         ? errno.errno[this.cause.errno].description
         : this.cause.message)
-      + (this.cause.path ? &#x27; [&#x27; + this.cause.path + &#x27;]&#x27; : &#x27;&#x27;)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
   }
   Error.call(this)
   if (Error.captureStackTrace)
@@ -1265,7 +1255,7 @@ x3c;/a&#x3e;
     <li>description and source-code<pre class="apidocCodePre">LevelUPError = function (message, cause) {
   init.call(this, type, message, cause)
   //TODO: the specificity here is stupid, errno should be available everywhere
-  if (type == &#x27;FilesystemError&#x27;) {
+  if (type == 'FilesystemError') {
     this.code    = this.cause.code
     this.path    = this.cause.path
     this.errno   = this.cause.errno
@@ -1273,7 +1263,7 @@ x3c;/a&#x3e;
       (errno.errno[this.cause.errno]
         ? errno.errno[this.cause.errno].description
         : this.cause.message)
-      + (this.cause.path ? &#x27; [&#x27; + this.cause.path + &#x27;]&#x27; : &#x27;&#x27;)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
   }
   Error.call(this)
   if (Error.captureStackTrace)
@@ -1294,7 +1284,7 @@ x3c;/a&#x3e;
     <li>description and source-code<pre class="apidocCodePre">NotFoundError = function (message, cause) {
   init.call(this, type, message, cause)
   //TODO: the specificity here is stupid, errno should be available everywhere
-  if (type == &#x27;FilesystemError&#x27;) {
+  if (type == 'FilesystemError') {
     this.code    = this.cause.code
     this.path    = this.cause.path
     this.errno   = this.cause.errno
@@ -1302,7 +1292,7 @@ x3c;/a&#x3e;
       (errno.errno[this.cause.errno]
         ? errno.errno[this.cause.errno].description
         : this.cause.message)
-      + (this.cause.path ? &#x27; [&#x27; + this.cause.path + &#x27;]&#x27; : &#x27;&#x27;)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
   }
   Error.call(this)
   if (Error.captureStackTrace)
@@ -1323,7 +1313,7 @@ x3c;/a&#x3e;
     <li>description and source-code<pre class="apidocCodePre">OpenError = function (message, cause) {
   init.call(this, type, message, cause)
   //TODO: the specificity here is stupid, errno should be available everywhere
-  if (type == &#x27;FilesystemError&#x27;) {
+  if (type == 'FilesystemError') {
     this.code    = this.cause.code
     this.path    = this.cause.path
     this.errno   = this.cause.errno
@@ -1331,7 +1321,7 @@ x3c;/a&#x3e;
       (errno.errno[this.cause.errno]
         ? errno.errno[this.cause.errno].description
         : this.cause.message)
-      + (this.cause.path ? &#x27; [&#x27; + this.cause.path + &#x27;]&#x27; : &#x27;&#x27;)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
   }
   Error.call(this)
   if (Error.captureStackTrace)
@@ -1352,7 +1342,7 @@ x3c;/a&#x3e;
     <li>description and source-code<pre class="apidocCodePre">ReadError = function (message, cause) {
   init.call(this, type, message, cause)
   //TODO: the specificity here is stupid, errno should be available everywhere
-  if (type == &#x27;FilesystemError&#x27;) {
+  if (type == 'FilesystemError') {
     this.code    = this.cause.code
     this.path    = this.cause.path
     this.errno   = this.cause.errno
@@ -1360,7 +1350,7 @@ x3c;/a&#x3e;
       (errno.errno[this.cause.errno]
         ? errno.errno[this.cause.errno].description
         : this.cause.message)
-      + (this.cause.path ? &#x27; [&#x27; + this.cause.path + &#x27;]&#x27; : &#x27;&#x27;)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
   }
   Error.call(this)
   if (Error.captureStackTrace)
@@ -1381,7 +1371,7 @@ x3c;/a&#x3e;
     <li>description and source-code<pre class="apidocCodePre">WriteError = function (message, cause) {
   init.call(this, type, message, cause)
   //TODO: the specificity here is stupid, errno should be available everywhere
-  if (type == &#x27;FilesystemError&#x27;) {
+  if (type == 'FilesystemError') {
     this.code    = this.cause.code
     this.path    = this.cause.path
     this.errno   = this.cause.errno
@@ -1389,7 +1379,7 @@ x3c;/a&#x3e;
       (errno.errno[this.cause.errno]
         ? errno.errno[this.cause.errno].description
         : this.cause.message)
-      + (this.cause.path ? &#x27; [&#x27; + this.cause.path + &#x27;]&#x27; : &#x27;&#x27;)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
   }
   Error.call(this)
   if (Error.captureStackTrace)
@@ -1415,7 +1405,7 @@ x3c;/a&#x3e;
     <li>description and source-code<pre class="apidocCodePre">EncodingError = function (message, cause) {
   init.call(this, type, message, cause)
   //TODO: the specificity here is stupid, errno should be available everywhere
-  if (type == &#x27;FilesystemError&#x27;) {
+  if (type == 'FilesystemError') {
     this.code    = this.cause.code
     this.path    = this.cause.path
     this.errno   = this.cause.errno
@@ -1423,7 +1413,7 @@ x3c;/a&#x3e;
       (errno.errno[this.cause.errno]
         ? errno.errno[this.cause.errno].description
         : this.cause.message)
-      + (this.cause.path ? &#x27; [&#x27; + this.cause.path + &#x27;]&#x27; : &#x27;&#x27;)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
   }
   Error.call(this)
   if (Error.captureStackTrace)
@@ -1449,7 +1439,7 @@ x3c;/a&#x3e;
     <li>description and source-code<pre class="apidocCodePre">InitializationError = function (message, cause) {
   init.call(this, type, message, cause)
   //TODO: the specificity here is stupid, errno should be available everywhere
-  if (type == &#x27;FilesystemError&#x27;) {
+  if (type == 'FilesystemError') {
     this.code    = this.cause.code
     this.path    = this.cause.path
     this.errno   = this.cause.errno
@@ -1457,7 +1447,7 @@ x3c;/a&#x3e;
       (errno.errno[this.cause.errno]
         ? errno.errno[this.cause.errno].description
         : this.cause.message)
-      + (this.cause.path ? &#x27; [&#x27; + this.cause.path + &#x27;]&#x27; : &#x27;&#x27;)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
   }
   Error.call(this)
   if (Error.captureStackTrace)
@@ -1483,7 +1473,7 @@ x3c;/a&#x3e;
     <li>description and source-code<pre class="apidocCodePre">LevelUPError = function (message, cause) {
   init.call(this, type, message, cause)
   //TODO: the specificity here is stupid, errno should be available everywhere
-  if (type == &#x27;FilesystemError&#x27;) {
+  if (type == 'FilesystemError') {
     this.code    = this.cause.code
     this.path    = this.cause.path
     this.errno   = this.cause.errno
@@ -1491,7 +1481,7 @@ x3c;/a&#x3e;
       (errno.errno[this.cause.errno]
         ? errno.errno[this.cause.errno].description
         : this.cause.message)
-      + (this.cause.path ? &#x27; [&#x27; + this.cause.path + &#x27;]&#x27; : &#x27;&#x27;)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
   }
   Error.call(this)
   if (Error.captureStackTrace)
@@ -1517,7 +1507,7 @@ x3c;/a&#x3e;
     <li>description and source-code<pre class="apidocCodePre">NotFoundError = function (message, cause) {
   init.call(this, type, message, cause)
   //TODO: the specificity here is stupid, errno should be available everywhere
-  if (type == &#x27;FilesystemError&#x27;) {
+  if (type == 'FilesystemError') {
     this.code    = this.cause.code
     this.path    = this.cause.path
     this.errno   = this.cause.errno
@@ -1525,7 +1515,7 @@ x3c;/a&#x3e;
       (errno.errno[this.cause.errno]
         ? errno.errno[this.cause.errno].description
         : this.cause.message)
-      + (this.cause.path ? &#x27; [&#x27; + this.cause.path + &#x27;]&#x27; : &#x27;&#x27;)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
   }
   Error.call(this)
   if (Error.captureStackTrace)
@@ -1551,7 +1541,7 @@ x3c;/a&#x3e;
     <li>description and source-code<pre class="apidocCodePre">OpenError = function (message, cause) {
   init.call(this, type, message, cause)
   //TODO: the specificity here is stupid, errno should be available everywhere
-  if (type == &#x27;FilesystemError&#x27;) {
+  if (type == 'FilesystemError') {
     this.code    = this.cause.code
     this.path    = this.cause.path
     this.errno   = this.cause.errno
@@ -1559,7 +1549,7 @@ x3c;/a&#x3e;
       (errno.errno[this.cause.errno]
         ? errno.errno[this.cause.errno].description
         : this.cause.message)
-      + (this.cause.path ? &#x27; [&#x27; + this.cause.path + &#x27;]&#x27; : &#x27;&#x27;)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
   }
   Error.call(this)
   if (Error.captureStackTrace)
@@ -1585,7 +1575,7 @@ x3c;/a&#x3e;
     <li>description and source-code<pre class="apidocCodePre">ReadError = function (message, cause) {
   init.call(this, type, message, cause)
   //TODO: the specificity here is stupid, errno should be available everywhere
-  if (type == &#x27;FilesystemError&#x27;) {
+  if (type == 'FilesystemError') {
     this.code    = this.cause.code
     this.path    = this.cause.path
     this.errno   = this.cause.errno
@@ -1593,7 +1583,7 @@ x3c;/a&#x3e;
       (errno.errno[this.cause.errno]
         ? errno.errno[this.cause.errno].description
         : this.cause.message)
-      + (this.cause.path ? &#x27; [&#x27; + this.cause.path + &#x27;]&#x27; : &#x27;&#x27;)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
   }
   Error.call(this)
   if (Error.captureStackTrace)
@@ -1619,7 +1609,7 @@ x3c;/a&#x3e;
     <li>description and source-code<pre class="apidocCodePre">WriteError = function (message, cause) {
   init.call(this, type, message, cause)
   //TODO: the specificity here is stupid, errno should be available everywhere
-  if (type == &#x27;FilesystemError&#x27;) {
+  if (type == 'FilesystemError') {
     this.code    = this.cause.code
     this.path    = this.cause.path
     this.errno   = this.cause.errno
@@ -1627,7 +1617,7 @@ x3c;/a&#x3e;
       (errno.errno[this.cause.errno]
         ? errno.errno[this.cause.errno].description
         : this.cause.message)
-      + (this.cause.path ? &#x27; [&#x27; + this.cause.path + &#x27;]&#x27; : &#x27;&#x27;)
+      + (this.cause.path ? ' [' + this.cause.path + ']' : '')
   }
   Error.call(this)
   if (Error.captureStackTrace)
@@ -1658,27 +1648,26 @@ x3c;/a&#x3e;
   return fn.apply(this, arguments);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  * &#x3c;a href=&#x22;#createValueStream&#x22;&#x3e;&#x3c;code&#x3e;db.&#x3c;b&#x3e;createValueStream()&#x3c;/b&#x3e;&#x3c;/code
-&#x3e;&#x3c;/a&#x3e;
+  * &lt;a href="#createValueStream"&gt;&lt;code&gt;db.&lt;b&gt;createValueStream()&lt;/b&gt;&lt;/code
+&gt;&lt;/a&gt;
 
 ### Special operations exposed by LevelDOWN
 
-  * &#x3c;a href=&#x22;#approximateSize&#x22;&#x3e;&#x3c;code&#x3e;db.db.&#x3c;b&#x3e;approximateSize()&#x3c;/b&#x3e;&#x3c;/code
-&#x3e;&#x3c;/a&#x3e;
-  * &#x3c;a href=&#x22;#getProperty&#x22;&#x3e;&#x3c;code&#x3e;db.db.&#x3c;b&#x3e;getProperty()&#x3c;/b&#x3e;&#x3c;/code&#x3e;&#
-x3c;/a&#x3e;
-  * &#x3c;a href=&#x22;#destroy&#x22;&#x3e;&#x3c;code&#x3e;&#x3c;b&#x3e;leveldown.destroy()&#x3c;/b&#x3e;&#x3c;/code&#x3e;&#x3c;/
-a&#x3e;
-  * &#x3c;a href=&#x22;#repair&#x22;&#x3e;&#x3c;code&#x3e;&#x3c;b&#x3e;leveldown.<span class="apidocCodeKeywordSpan">repair</span
->()&#x3c;/b&#x3e;&#x3c;/code&#x3e;&#x3c;/a&#x3e;
+  * &lt;a href="#approximateSize"&gt;&lt;code&gt;db.db.&lt;b&gt;approximateSize()&lt;/b&gt;&lt;/code
+&gt;&lt;/a&gt;
+  * &lt;a href="#getProperty"&gt;&lt;code&gt;db.db.&lt;b&gt;getProperty()&lt;/b&gt;&lt;/code&gt;&amp;#
+x3c;/a&gt;
+  * &lt;a href="#destroy"&gt;&lt;code&gt;&lt;b&gt;leveldown.destroy()&lt;/b&gt;&lt;/code&gt;&lt;/
+a&gt;
+  * &lt;a href="#repair"&gt;&lt;code&gt;&lt;b&gt;leveldown.<span class="apidocCodeKeywordSpan">repair</span>()&lt;/b&gt;&lt;/code&gt;&lt;/a&gt;
 
 ### Special Notes
-  * &#x3c;a href=&#x22;#writeStreams&#x22;&#x3e;What happened to &#x3c;code&#x3e;&#x3c;b&#x3e;db.createWriteStream()&#x3c;/b&#x3e
-;&#x3c;/code&#x3e;&#x3c;/a&#x3e;
+  * &lt;a href="#writeStreams"&gt;What happened to &lt;code&gt;&lt;b&gt;db.createWriteStream()&lt;/b&gt;
+;&lt;/code&gt;&lt;/a&gt;
 
 
 --------------------------------------------------------
-&#x3c;a name=&#x22;ctor&#x22;&#x3e;&#x3c;/a&#x3e;
+&lt;a name="ctor"&gt;&lt;/a&gt;
 ...</pre></li>
     </ul>
 
@@ -1715,7 +1704,7 @@ a&#x3e;
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function dispatchError(db, error, callback) {
-  typeof callback == &#x27;function&#x27; ? callback(error) : db.emit(&#x27;error&#x27;, error)
+  typeof callback == 'function' ? callback(error) : db.emit('error', error)
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1733,27 +1722,27 @@ a&#x3e;
   if (leveldown)
     return leveldown
 
-  var requiredVersion  = require(&#x27;../package.json&#x27;).devDependencies.leveldown
+  var requiredVersion  = require('../package.json').devDependencies.leveldown
     , leveldownVersion
 
   try {
-    leveldownVersion = require(&#x27;leveldown/package.json&#x27;).version
+    leveldownVersion = require('leveldown/package.json').version
   } catch (e) {
     throw requireError(e)
   }
 
-  if (!require(&#x27;semver&#x27;).satisfies(leveldownVersion, requiredVersion)) {
+  if (!require('semver').satisfies(leveldownVersion, requiredVersion)) {
     throw new LevelUPError(
-        &#x27;Installed version of LevelDOWN (&#x27;
+        'Installed version of LevelDOWN ('
       + leveldownVersion
-      + &#x27;) does not match required version (&#x27;
+      + ') does not match required version ('
       + requiredVersion
-      + &#x27;)&#x27;
+      + ')'
     )
   }
 
   try {
-    return leveldown = require(&#x27;leveldown&#x27;)
+    return leveldown = require('leveldown')
   } catch (e) {
     throw requireError(e)
   }
@@ -1771,9 +1760,9 @@ a&#x3e;
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function getOptions(options) {
-  if (typeof options == &#x27;string&#x27;)
+  if (typeof options == 'string')
     options = { valueEncoding: options }
-  if (typeof options != &#x27;object&#x27;)
+  if (typeof options != 'object')
     options = {}
   return options
 }</pre></li>
@@ -1790,7 +1779,7 @@ a&#x3e;
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isDefined(v) {
-  return typeof v !== &#x27;undefined&#x27;
+  return typeof v !== 'undefined'
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1806,3 +1795,4 @@ a&#x3e;
     ]
 </div>
 </div>
+</body></html>
