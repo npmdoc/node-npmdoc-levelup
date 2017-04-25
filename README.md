@@ -1,4 +1,7 @@
-# api documentation for  [levelup (v1.3.5)](https://github.com/level/levelup)  [![npm package](https://img.shields.io/npm/v/npmdoc-levelup.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-levelup) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-levelup.svg)](https://travis-ci.org/npmdoc/node-npmdoc-levelup)
+# npmdoc-levelup
+
+#### basic api documentation for  [levelup (v1.3.5)](https://github.com/level/levelup)  [![npm package](https://img.shields.io/npm/v/npmdoc-levelup.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-levelup) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-levelup.svg)](https://travis-ci.org/npmdoc/node-npmdoc-levelup)
+
 #### Fast & simple storage - a Node.js-style LevelDB wrapper
 
 [![NPM](https://nodei.co/npm/levelup.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/levelup)
@@ -146,7 +149,8 @@
     "scripts": {
         "test": "tape test/*-test.js | faucet"
     },
-    "version": "1.3.5"
+    "version": "1.3.5",
+    "bin": {}
 }
 ```
 
